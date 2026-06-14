@@ -4,10 +4,10 @@ import CalcShell from '@/components/CalcShell';
 import ResultCard from '@/components/ResultCard';
 import { calcDCA, type DCAEntry } from '@/lib/calculations';
 
-const emptyEntry = (): DCAEntry => ({ price: 0, amount: 0 });
+type EntryInput = { price: string; amount: string };
 
 export default function DCAPage() {
-  const [entries, setEntries] = useState<Array<{ price: string; amount: string }}>([
+  const [entries, setEntries] = useState<EntryInput[]>([
     { price: '', amount: '' },
     { price: '', amount: '' },
   ]);
